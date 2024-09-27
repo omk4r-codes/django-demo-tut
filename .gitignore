@@ -1,0 +1,22 @@
+__pycache__/
+
+# Django specific
+db.sqlite3
+/media/
+*.log
+*.pot
+*.py[cod]
+*.sqlite3
+*.mo
+
+# Virtual environment
+venv/
+env/
+
+# Static and media files
+/staticfiles/
+*.bak
+
+# Secrets and settings (you should store secret keys and settings in a different file or use environment variables)
+*.env
+settings_local.py

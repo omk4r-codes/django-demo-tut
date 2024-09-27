@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock title %}
+
+{% block body %}
+<h1 class="text-center">Feel Free to Contact Us!</h1>
+{% if confirmation %}
+<p class="text-center">{{ confirmation }}</p>
+
+
+{% else %}
+<form class="custom-form" method="post" action="/contact/">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <input type="text" class="form-control" name="name" placeholder="Name">
+    </div>
+
+    <div class="mb-3">
+        <input type="email" class="form-control" name="email" placeholder="Email">
+    </div>
+
+    <div class="mb-3">
+        <textarea class="form-control" rows="3" name="desc" placeholder="Description"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-dark">Submit</button>
+</form>
+
+{% endif %}
+
+<style>
+    .custom-form {
+        max-width: 500px;
+        /* Adjust the width as needed */
+        margin: 0 auto;
+        /* Center the form */
+    }
+</style>
+{% endblock body %}

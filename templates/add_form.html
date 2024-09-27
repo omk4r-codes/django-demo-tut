@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Addition{% endblock title %}
+
+{% block body %}
+
+<form action="/add_form/" method="GET" class="custom-form">
+    <div class="mb-3">
+        <label class="form-label">number 1:</label>
+        <input type="number" class="form-control" name="num1">
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">number 2:</label>
+        <input type="number" class="form-control" name="num2">
+    </div>
+    <button type="submit" class="btn btn-dark">Submit</button>
+</form>
+
+{% if result is not None %}
+<h2 class="custom-form">Result: {{ result }}</h2>
+{% endif %}
+
+
+<style>
+    .custom-form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+</style>
+{% endblock body %}
